@@ -1,0 +1,206 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); /* Beautiful gradient background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow effect */
+    max-width: 600px; /* Keep max-width for good readability */
+    width: 100%;
+    transition: transform 0.3s ease; /* Add container transition */
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Slightly lift on hover */
+}
+
+h1 {
+    font-size: 2.8em; /* Larger heading */
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); /* Heading gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 5s ease infinite; /* Heading gradient animation */
+    background-size: 400% 400%;
+}
+
+@keyframes gradientText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.input-group {
+    margin-bottom: 15px; /* Slightly reduced margin for more inputs */
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.input-group input[type="text"] { /* Target all text inputs within input-group */
+    width: calc(100% - 22px); /* 100% minus padding and border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow effect */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input[type="text"]:focus { /* Apply focus style to all text inputs */
+    border-color: #feca57;
+    box-shadow: 0 0 0 3px rgba(254, 202, 87, 0.3); /* Focus glow effect */
+    outline: none;
+}
+
+
+.idea-box {
+    background: #f8f9fa; /* Lighter background */
+    border: 2px solid #ddd; /* Solid border */
+    border-radius: 10px;
+    padding: 25px; /* Increased padding */
+    margin-bottom: 20px; /* Adjusted spacing */
+    min-height: 120px; /* Slightly increased height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6em; /* Larger font size */
+    font-weight: bold;
+    color: #343a40;
+    transition: all 0.4s ease; /* Smoother transition */
+    word-break: break-word;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+}
+
+/* Loading animation effect */
+.idea-box.loading {
+    background-color: #e9f5fd; /* Blue loading background */
+    color: #007bff;
+    border-color: #007bff;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
+    animation: pulse 1.5s infinite; /* Pulse animation */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.02); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+#generate-btn, #copy-btn {
+    background: linear-gradient(45deg, #1abc9c, #16a085); /* Greenish buttons */
+    color: white;
+    border: none;
+    padding: 15px 35px; /* Larger click area */
+    font-size: 1.25em; /* Larger font size */
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.3s ease;
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.4);
+    margin: 0 10px 30px; /* Adjust button spacing */
+}
+
+#generate-btn:hover, #copy-btn:hover {
+    transform: translateY(-4px); /* More pronounced lift */
+    box-shadow: 0 8px 25px rgba(26, 188, 156, 0.6);
+    background: linear-gradient(45deg, #16a085, #1abc9c); /* Gradient reverse */
+}
+
+#copy-btn {
+    background: linear-gradient(45deg, #3498db, #2980b9); /* Blue copy button */
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+    font-size: 1.1em; /* Copy button slightly smaller */
+    padding: 12px 25px;
+    margin-bottom: 20px; /* Adjust spacing */
+}
+
+#copy-btn:hover {
+    background: linear-gradient(45deg, #2980b9, #3498db);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.6);
+}
+
+#copy-btn.hidden {
+    display: none;
+}
+
+.monetization {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Lemon Squeezy buy button style - adjusted for consistency */
+.buy-button {
+    display: inline-block;
+    background: linear-gradient(45deg, #667eea, #764ba2); /* Purple gradient */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+    margin-top: 15px;
+}
+
+.buy-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
+}
+
+.small-text {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    .subtitle {
+        font-size: 1em;
+    }
+    .idea-box {
+        font-size: 1.2em;
+        min-height: 80px;
+    }
+    #generate-btn, #copy-btn {
+        font-size: 1.1em;
+        padding: 12px 25px;
+        margin-bottom: 20px;
+    }
+}
